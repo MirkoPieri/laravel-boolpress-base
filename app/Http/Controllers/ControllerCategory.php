@@ -50,7 +50,7 @@ class ControllerCategory extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
