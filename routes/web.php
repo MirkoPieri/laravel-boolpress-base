@@ -20,3 +20,4 @@ Route::post('/post/{id}', 'ControllerPost@update') -> name('post.update');
 
 Route::get('/admin/post/create', 'ControllerPost@create') -> name('post.create');
 Route::post('/', 'ControllerPost@store') -> name('post.store');
+Route::get('/delete/{id}', 'ControllerPost@destroy') -> name('post.destroy');

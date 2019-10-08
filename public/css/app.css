@@ -24,7 +24,7 @@ footer {
   background-color: lightgreen;
 }
 
-footer h1 {
+footer h2 {
   text-transform: uppercase;
   font-size: 18pt;
   padding: 20px 0;
@@ -81,5 +81,36 @@ div.create a {
   border: 5px solid lightgreen;
   padding: 10px;
   border-radius: 10px;
+}
+
+div.edit {
+  padding: 50px;
+}
+
+div.edit div.form-group {
+  padding: 20px 0;
+}
+
+div.edit div.form-group label {
+  display: block;
+  padding-right: 20px;
+  font-size: 18pt;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+div.edit div.form-group input {
+  width: 250px;
+  height: 30px;
+}
+
+div.edit button {
+  width: 100px;
+  height: 30px;
+  background-color: orange;
+  border: 2px solid red;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
 }
 

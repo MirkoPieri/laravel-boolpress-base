@@ -15,6 +15,7 @@
           <p><b>Date:</b> {{$values -> updated_at}}</p>
           <p><b>Category:</b> {{$values -> category_id}}</p><br>
           <a href="{{route('post.show', $values -> id )}}">APRI</a>
+          <a href="{{ route('post.destroy', $values -> id) }}">DELETE</a>
         </div>
       @endforeach
 
