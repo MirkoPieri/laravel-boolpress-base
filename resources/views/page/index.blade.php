@@ -1,7 +1,9 @@
 @extends('layoute.welcome')
 
 @section('content')
-
+    <div class="create">
+      <a href="{{route('post.create')}}">CREATE NEW POST</a>
+    </div>
     <div class="nav">
       @foreach ($category as $value)
         <a href="{{ route('cat.show', $value -> id )}}">{{$value -> name}}</a>

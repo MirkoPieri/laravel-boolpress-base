@@ -25,7 +25,8 @@ class ControllerPost extends Controller
      */
     public function create()
     {
-        //
+        $category = Category::all();
+        return view('page.create', compact('category'));
     }
 
     /**
@@ -36,7 +37,15 @@ class ControllerPost extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request -> validate([
+          'text' => 'required',
+          'author' => 'required',
+          'category_id' => 'required'
+        ]);
+        // dd($validateData);
+        Post::create($validateData);
+
+        return redirect('/');
     }
 
     /**
