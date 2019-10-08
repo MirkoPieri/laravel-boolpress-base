@@ -3,9 +3,7 @@
 @section('content')
 
     <div class="nav">
-      @foreach ($category as $value)
-        <a href="{{ route('cat.show', $value -> id )}}">{{$value -> name}}</a>
-      @endforeach
+        <a href="{{route('cat.index')}}">BACK</a>
     </div>
 
   <div class="container">

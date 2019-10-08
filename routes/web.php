@@ -11,4 +11,9 @@
 |
 */
 
-Route::get('/', 'ControllerCategory@index');
+Route::get('/', 'ControllerCategory@index') -> name('cat.index');
+
+Route::get('/category/{id}', 'ControllerCategory@show') -> name('cat.show');
+Route::get('/post/{id}', 'ControllerPost@show') -> name('post.show');
+Route::get('/admin/post/edit/{id}', 'ControllerPost@edit') -> name('post.edit');
+Route::post('/post/{id}', 'ControllerPost@update') -> name('post.update');

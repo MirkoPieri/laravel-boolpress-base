@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
 
-class ControllerCategory extends Controller
+class ControllerPost extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,7 @@ class ControllerCategory extends Controller
      */
     public function index()
     {
-        $category = Category::all();
-        $post = Post::orderBy('created_at', 'DESC')->limit(5)->get();
 
-        return view('page.index', compact('category', 'post'));
     }
 
     /**
@@ -50,10 +47,9 @@ class ControllerCategory extends Controller
      */
     public function show($id)
     {
-      $category = Category::findOrFail($id);
+        $post = Post::whereId($id)->get();
 
-      $post = Post::where('category_id', $id) -> get();
-      return view('page.show', compact('category', 'post'));
+        return view('page.post', compact('post'));
     }
 
     /**
@@ -64,7 +60,9 @@ class ControllerCategory extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+
+        return view('page.edit', compact('post'));
     }
 
     /**
@@ -76,7 +74,13 @@ class ControllerCategory extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validateData = $request -> validate([
+          'text' => 'required'
+        ]);
+
+        Post::whereId($id) -> update($validateData);
+         return redirect( route('post.show', $id ) );
+
     }
 
     /**

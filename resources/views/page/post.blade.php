@@ -2,11 +2,10 @@
 
 @section('content')
 
-    <div class="nav">
-      @foreach ($category as $value)
-        <a href="{{ route('cat.show', $value -> id )}}">{{$value -> name}}</a>
-      @endforeach
-    </div>
+  <div class="nav">
+      <a href="{{route('cat.index')}}">BACK</a>
+  </div>
+
 
   <div class="container">
 
@@ -16,11 +15,11 @@
           <p><b>Username:</b> {{$values -> author}}</p>
           <p><b>Date:</b> {{$values -> created_at}}</p>
           <p><b>Category:</b> {{$values -> category_id}}</p><br>
-          <a href="{{route('post.show', $values -> id )}}">APRI</a>
+          <a href="{{route('post.edit', $values -> id)}}">EDIT</a>
         </div>
       @endforeach
 
   </div>
 
-
+{{-- pagina per aprire singolo post e modificarlo --}}
 @endsection
