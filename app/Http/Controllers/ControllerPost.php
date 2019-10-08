@@ -79,7 +79,7 @@ class ControllerPost extends Controller
         ]);
 
         Post::whereId($id) -> update($validateData);
-         return redirect( route('post.show', $id ) );
+        return redirect( route('post.show', $id ) ); //ritorno al post appena modificato
 
     }
 

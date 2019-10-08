@@ -14,7 +14,7 @@
         <div class="box">
           <p><b>Description:</b> {{$values -> text}}</p>
           <p><b>Username:</b> {{$values -> author}}</p>
-          <p><b>Date:</b> {{$values -> created_at}}</p>
+          <p><b>Date:</b> {{$values -> updated_at}}</p>
           <p><b>Category:</b> {{$values -> category_id}}</p><br>
           <a href="{{route('post.show', $values -> id )}}">APRI</a>
         </div>

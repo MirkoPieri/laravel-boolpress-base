@@ -16,7 +16,7 @@ class ControllerCategory extends Controller
     public function index()
     {
         $category = Category::all();
-        $post = Post::orderBy('created_at', 'DESC')->limit(5)->get();
+        $post = Post::orderBy('updated_at', 'DESC')->limit(5)->get();
 
         return view('page.index', compact('category', 'post'));
     }
