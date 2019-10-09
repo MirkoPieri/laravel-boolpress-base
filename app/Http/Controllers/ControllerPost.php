@@ -56,7 +56,7 @@ class ControllerPost extends Controller
      */
     public function show($id)
     {
-        $post = Post::whereId($id)->get();
+        $post = Post::findOrFail($id);
 
         return view('page.post', compact('post'));
     }

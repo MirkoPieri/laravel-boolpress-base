@@ -51,6 +51,11 @@ div.container {
   overflow-y: scroll;
 }
 
+div.container h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
 div.box {
   background-color: lightblue;
   margin: 20px;

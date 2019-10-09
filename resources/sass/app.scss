@@ -49,6 +49,11 @@ div.nav {
 div.container {
   height: calc(100vh - 380px);
   overflow-y: scroll;
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
 div.box {
