@@ -3,6 +3,7 @@
 @section('content')
     <div class="create">
       <a href="{{route('post.create')}}">CREATE NEW POST</a>
+        <a href="{{route('tag.index')}}">VIEW TAG LIST</a>
     </div>
     <div class="nav">
       @foreach ($category as $value)
