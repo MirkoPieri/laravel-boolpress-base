@@ -86,9 +86,19 @@ class ControllerPost extends Controller
     public function update(Request $request, $id)
     {
         $validateData = $request -> validate([
-          'text' => 'required'
+          'text' => 'required',
+          'img' => 'nullable|mimes:jpeg,jpg,png,gif,svg|max:2048'
         ]);
 
+        $file = $request -> file('img');
+        if ($file) {
+
+          $targetPath = "img";
+          $targetFile = "post-" . $id . "." . $file -> getClientOriginalExtension();
+
+          $file -> move($targetPath, $targetFile);
+          $validateData['img'] = $targetFile;
+        }
 
         Post::whereId($id) -> update($validateData);
         $post = Post::findOrFail($id);

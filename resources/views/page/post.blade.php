@@ -13,7 +13,7 @@
           <p><b>Description:</b> {!!$post -> text!!}</p>
           <p><b>Username:</b> {{$post -> author}}</p>
           <p><b>Date:</b> {{$post -> updated_at}}</p>
-          <p><b>Category:</b> {{$post -> category_id}}</p><br>
+          <p><b>Category:</b> {{$post -> category_id}}</p>
           <a href="{{route('post.edit', $post -> id)}}">EDIT</a>
         </div>
 
