@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use App\Mail\MovieAdminShip;
 use App\Category;
 use App\Post;
 
@@ -87,7 +89,11 @@ class ControllerPost extends Controller
           'text' => 'required'
         ]);
 
+
         Post::whereId($id) -> update($validateData);
+        $post = Post::findOrFail($id);
+
+        Mail::to('test@mia-mail.com')->send(new MovieAdminShip($post, 'Post Modificato'));
         return redirect( route('post.show', $id ) ); //ritorno al post appena modificato
 
     }
