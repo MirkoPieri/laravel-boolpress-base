@@ -14,6 +14,9 @@
           <p><b>Username:</b> {{$post -> author}}</p>
           <p><b>Date:</b> {{$post -> updated_at}}</p>
           <p><b>Category:</b> {{$post -> category_id}}</p>
+          @if ($post -> img)
+            <p> <img src="/img/{{$post -> img}}" alt="ciao"> <p><br>
+          @endif
           <a href="{{route('post.edit', $post -> id)}}">EDIT</a>
         </div>
 
